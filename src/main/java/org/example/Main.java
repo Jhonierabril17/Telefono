@@ -9,8 +9,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         boolean estado = true;
         while (estado){
-            System.out.println("--------");
-            System.out.println("Bienvenidos");
+            System.out.println("------------------------------------------");
+            System.out.println(" Bienvenidos");
             System.out.println("1. Crea Cabina telefonica");
             System.out.println("2. Escoger cabina(Local, LD, Celular)");
             System.out.println("3. Info x Cabina");
@@ -18,6 +18,7 @@ public class Main {
             System.out.println("5. Reiniciar cabinas");
             System.out.println("6. Salir");
             System.out.println("Seleccione una opcion");
+            System.out.println("------------------------------------------");
             int opc = sc.nextInt();
 
             switch (opc){

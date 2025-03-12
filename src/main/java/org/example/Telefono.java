@@ -1,6 +1,5 @@
 package org.example;
 
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -29,9 +28,9 @@ public class Telefono {
         String idCabina;
         String Tipo;
         int Duracion;
-        int Costo;
+        double Costo;
 
-        public Llamada(String idCabina, String tipo, int duracion, int costo) {
+        public Llamada(String idCabina, String tipo, int duracion, double costo) {
             this.idCabina = idCabina;
             Tipo = tipo;
             Duracion = duracion;
@@ -40,6 +39,7 @@ public class Telefono {
     }
 
     public static void crearCabina() {
+        System.out.println("SOLO DATOS NUMERICOS");
         System.out.println("Ingrese el ID de la cabina");
         String id = sc.next();
 
@@ -112,7 +112,7 @@ public class Telefono {
 
         int TotalLlamadas = 0;
         int TotalDuracion = 0;
-        int TotalCosto = 0;
+        double TotalCosto = 0;
 
         for (Llamada llamada : llamadas) {
             if (llamada.idCabina.equals(id)) {
@@ -123,14 +123,14 @@ public class Telefono {
         }
         System.out.println("📞 Cabina: " + id);
         System.out.println("Total de llamadas: " + TotalLlamadas);
-        System.out.println("Total Duracion de llamdas: " + TotalDuracion);
-        System.out.println("Total costos: " + TotalCosto);
+        System.out.println("Total Duracion de llamdas: " + TotalDuracion + " Minutos");
+        System.out.println("Total costos: $" + TotalCosto + " Pesos");
     }
 
     public static void mostrar_consolidado() {
         int totalllamadas = llamadas.size();
         int totalDuracion = 0;
-        int totalCosto = 0;
+        double totalCosto = 0;
 
         for (Llamada llamada : llamadas) {
             totalDuracion += llamada.Duracion;
@@ -139,8 +139,8 @@ public class Telefono {
 
         System.out.println(" Consolidado General");
         System.out.println(" - Total de llamadas: " + totalllamadas);
-        System.out.println(" - Total Duracion: " + totalDuracion);
-        System.out.println("- Costo Total: " + totalCosto);
+        System.out.println(" - Total Duracion: " + totalDuracion + " Minutos");
+        System.out.println("- Costo Total: $" + totalCosto + " Pesos");
     }
 
     public static void reiniciarCabina(){
